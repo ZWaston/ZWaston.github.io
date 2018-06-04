@@ -10,25 +10,25 @@
   <meta name="description" content="[TOC] Executor框架1、Executor框架的作用 Executor框架是在 JDK 1.5 引入的，内部使用了线程池机制，通过该框架来控制线程的启动、执行和关闭。  以前的Thread 即是工作单元，也是执行机制，JDK 1.5 之后，就将执行机制由Executor框架提供，工作单元指的是任务Runnable 和 Callable。 与Thread的start()方法对比，好处有：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="[TOC] Executor框架1、Executor框架的作用 Executor框架是在 JDK 1.5 引入的，内部使用了线程池机制，通过该框架来控制线程的启动、执行和关闭。  以前的Thread 即是工作单元，也是执行机制，JDK 1.5 之后，就将执行机制由Executor框架提供，工作单元指的是任务Runnable 和 Callable。 与Thread的start()方法对比，好处有：">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/Executor框架的两级调度模型.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/Executor框架整体类图-1528076873372.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/Executor框架使用示意图.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/FixedThreadPool执行流程.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/SingleThreadExecutor执行流程.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/CachedThreadPool执行流程.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/ScheduledThreadPoolExecutor%20任务传递示意图.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/ScheduledThreadPoolExecutor%20任务执行示意图.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/FutureTask状态迁移图.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/FutureTask的get和cancel执行示意图.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/Executor框架的两级调度模型.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/Executor框架整体类图-1528076873372.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/Executor框架使用示意图.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/FixedThreadPool执行流程.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/SingleThreadExecutor执行流程.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/CachedThreadPool执行流程.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/ScheduledThreadPoolExecutor%20任务传递示意图.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/ScheduledThreadPoolExecutor%20任务执行示意图.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/FutureTask状态迁移图.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/FutureTask的get和cancel执行示意图.png">
 <meta property="og:updated_time" content="2018-06-04T07:53:13.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="[TOC] Executor框架1、Executor框架的作用 Executor框架是在 JDK 1.5 引入的，内部使用了线程池机制，通过该框架来控制线程的启动、执行和关闭。  以前的Thread 即是工作单元，也是执行机制，JDK 1.5 之后，就将执行机制由Executor框架提供，工作单元指的是任务Runnable 和 Callable。 与Thread的start()方法对比，好处有：">
-<meta name="twitter:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/assets/Executor框架的两级调度模型.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/assets/Executor框架的两级调度模型.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -75,10 +75,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Java并发编程的艺术(6)——Executor框架" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/" class="article-date">
-  <time datetime="2018-06-03T08:34:51.866Z" itemprop="datePublished">2018-06-03</time>
+    <a href="/2018/06/04/Java并发编程的艺术(6)——Executor框架/" class="article-date">
+  <time datetime="2018-06-04T09:29:21.320Z" itemprop="datePublished">2018-06-04</time>
 </a>
     
   </div>
@@ -251,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/" data-id="cji01ypc7000330kr8ibfadyp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/04/Java并发编程的艺术(6)——Executor框架/" data-id="cji020jnb0003i4krsu1scmf1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -260,7 +260,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(5)——Java中的线程池/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/06/04/Java并发编程的艺术(7)——Java并发工具类：闭锁、同步屏障、信号量和交换者/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -269,6 +269,11 @@
       </div>
     </a>
   
+  
+    <a href="/2018/06/04/Java并发编程的艺术(5)——Java中的线程池/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
   
 </nav>
 
@@ -304,23 +309,23 @@
       <ul>
         
           <li>
-            <a href="/2018/06/04/你好/">你好</a>
+            <a href="/2018/06/04/Java并发编程的艺术(8)——Java并发包的锁/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2018/06/04/hello-world/">Hello World</a>
+            <a href="/2018/06/04/Java并发编程的艺术(7)——Java并发工具类：闭锁、同步屏障、信号量和交换者/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2018/06/04/Java并发编程的艺术/Java并发编程的艺术(9)——Java并发容器详解/">(no title)</a>
+            <a href="/2018/06/04/Java并发编程的艺术(6)——Executor框架/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(8)——Java并发包的锁/">(no title)</a>
+            <a href="/2018/06/04/Java并发编程的艺术(5)——Java中的线程池/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(7)——Java并发工具类：闭锁、同步屏障、信号量和交换者/">(no title)</a>
+            <a href="/2018/06/04/Java并发编程的艺术(9)——Java并发容器详解/">(no title)</a>
           </li>
         
       </ul>

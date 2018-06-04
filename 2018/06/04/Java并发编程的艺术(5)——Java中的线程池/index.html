@@ -10,17 +10,17 @@
   <meta name="description" content="[TOC] 一、线程池的作用合理使用线程池，能带来3个好处：  降低资源消耗 减少了每次 创建线程 、销毁线程 的开销。   提高响应速度 任务到达时，由于线程已经创建，故可以直接执行任务，因此提高了响应速度。  提高线程的可管理性 线程是一种稀缺资源，若不加以限制，不仅会大量消耗系统资源，还会影响系统的稳定性。 因此，线程池可以对线程的 创建与停止、线程数量等因素加以控制，可以进行统一分配、调优">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(5)——Java中的线程池/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(5)——Java中的线程池/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="[TOC] 一、线程池的作用合理使用线程池，能带来3个好处：  降低资源消耗 减少了每次 创建线程 、销毁线程 的开销。   提高响应速度 任务到达时，由于线程已经创建，故可以直接执行任务，因此提高了响应速度。  提高线程的可管理性 线程是一种稀缺资源，若不加以限制，不仅会大量消耗系统资源，还会影响系统的稳定性。 因此，线程池可以对线程的 创建与停止、线程数量等因素加以控制，可以进行统一分配、调优">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(5)——Java中的线程池/assets/ThreadPoolExecutor执行示意图.png">
-<meta property="og:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(5)——Java中的线程池/assets/线程池的处理流程.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(5)——Java中的线程池/assets/ThreadPoolExecutor执行示意图.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(5)——Java中的线程池/assets/线程池的处理流程.png">
 <meta property="og:updated_time" content="2018-06-04T07:52:42.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="[TOC] 一、线程池的作用合理使用线程池，能带来3个好处：  降低资源消耗 减少了每次 创建线程 、销毁线程 的开销。   提高响应速度 任务到达时，由于线程已经创建，故可以直接执行任务，因此提高了响应速度。  提高线程的可管理性 线程是一种稀缺资源，若不加以限制，不仅会大量消耗系统资源，还会影响系统的稳定性。 因此，线程池可以对线程的 创建与停止、线程数量等因素加以控制，可以进行统一分配、调优">
-<meta name="twitter:image" content="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(5)——Java中的线程池/assets/ThreadPoolExecutor执行示意图.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/04/Java并发编程的艺术(5)——Java中的线程池/assets/ThreadPoolExecutor执行示意图.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -67,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Java并发编程的艺术/Java并发编程的艺术(5)——Java中的线程池" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Java并发编程的艺术(5)——Java中的线程池" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(5)——Java中的线程池/" class="article-date">
-  <time datetime="2018-06-03T08:34:51.866Z" itemprop="datePublished">2018-06-03</time>
+    <a href="/2018/06/04/Java并发编程的艺术(5)——Java中的线程池/" class="article-date">
+  <time datetime="2018-06-04T09:29:21.318Z" itemprop="datePublished">2018-06-04</time>
 </a>
     
   </div>
@@ -268,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(5)——Java中的线程池/" data-id="cji01ypc5000230kruki6gs9k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/04/Java并发编程的艺术(5)——Java中的线程池/" data-id="cji020jn80002i4kru95kucbx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -277,7 +277,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/06/03/Java并发编程的艺术/Readme/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/06/04/Java并发编程的艺术(6)——Executor框架/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -287,7 +287,7 @@
     </a>
   
   
-    <a href="/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(6)——Executor框架/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/04/Java并发编程的艺术(9)——Java并发容器详解/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title"></div>
     </a>
@@ -326,23 +326,23 @@
       <ul>
         
           <li>
-            <a href="/2018/06/04/你好/">你好</a>
+            <a href="/2018/06/04/Java并发编程的艺术(8)——Java并发包的锁/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2018/06/04/hello-world/">Hello World</a>
+            <a href="/2018/06/04/Java并发编程的艺术(7)——Java并发工具类：闭锁、同步屏障、信号量和交换者/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2018/06/04/Java并发编程的艺术/Java并发编程的艺术(9)——Java并发容器详解/">(no title)</a>
+            <a href="/2018/06/04/Java并发编程的艺术(6)——Executor框架/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(8)——Java并发包的锁/">(no title)</a>
+            <a href="/2018/06/04/Java并发编程的艺术(5)——Java中的线程池/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2018/06/03/Java并发编程的艺术/Java并发编程的艺术(7)——Java并发工具类：闭锁、同步屏障、信号量和交换者/">(no title)</a>
+            <a href="/2018/06/04/Java并发编程的艺术(9)——Java并发容器详解/">(no title)</a>
           </li>
         
       </ul>
